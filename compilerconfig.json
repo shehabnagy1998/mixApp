@@ -1,0 +1,18 @@
+﻿[
+  {
+    "outputFile": "src/app/app.component.css",
+    "inputFile": "src/app/app.component.scss"
+  },
+  {
+    "outputFile": "src/app/Clock/clock/clock.component.css",
+    "inputFile": "src/app/Clock/clock/clock.component.scss"
+  },
+  {
+    "outputFile": "src/app/Clock/stop-watch/stop-watch.component.css",
+    "inputFile": "src/app/Clock/stop-watch/stop-watch.component.scss"
+  },
+  {
+    "outputFile": "src/app/Clock/timer/timer.component.css",
+    "inputFile": "src/app/Clock/timer/timer.component.scss"
+  }
+]

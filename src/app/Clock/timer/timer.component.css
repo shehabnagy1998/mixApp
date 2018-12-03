@@ -1,0 +1,48 @@
+﻿main {
+  text-align: center;
+  margin-top: 9rem; }
+  @media (min-width: 991px) {
+    main {
+      margin-top: 6.5rem; } }
+
+.lables {
+  display: flex;
+  justify-content: space-between;
+  font-size: 40px;
+  font-weight: bold;
+  width: 210px;
+  margin: 0 auto 10px; }
+
+.setTimer .timerSetter {
+  padding: 15px 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 30px;
+  width: 80px;
+  text-align: center; }
+
+.setTimer .splitter {
+  font-size: 20px;
+  font-weight: bold; }
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  font-size: 30px;
+  margin: 30px auto;
+  width: 240px; }
+  .buttons > button {
+    color: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 5px 15px;
+    cursor: pointer; }
+  .buttons .changing {
+    background: #4b77f2; }
+    .buttons .changing:hover {
+      background: #2955d0; }
+  .buttons .reset {
+    background: #dc3545; }
+    .buttons .reset:hover {
+      background: #ba1323; }

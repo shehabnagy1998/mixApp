@@ -1,0 +1,77 @@
+@mixin width($max, $min) {
+  width: $min;
+
+  @media(min-width: 991.98px) {
+    width: $max;
+  }
+}
+
+@mixin margin-top($max, $min) {
+  margin-top: $min;
+
+  @media(min-width: 991px) {
+    margin-top: $max;
+  }
+}
+
+main {
+  text-align: center;
+  @include margin-top(6.5rem, 9rem);
+}
+
+.lables {
+  display: flex;
+  justify-content: space-between;
+  font-size: 40px;
+  font-weight: bold;
+  width: 210px;
+  margin: 0 auto 10px;
+}
+
+.setTimer {
+  .timerSetter {
+    padding: 15px 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 30px;
+    width: 80px;
+    text-align: center;
+  }
+  .splitter {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  font-size: 30px;
+  margin: 30px auto;
+  width: 240px;
+
+  & > button {
+    color: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 5px 15px;
+    cursor: pointer;
+  }
+
+  .changing {
+    background: #4b77f2;
+
+    &:hover {
+      background: #4b77f2 - #222;
+    }
+  }
+
+  .reset {
+    background: #dc3545;
+
+    &:hover {
+      background: #dc3545 - #222;
+    }
+  }
+}

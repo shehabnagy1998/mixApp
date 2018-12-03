@@ -1,0 +1,21 @@
+﻿main {
+  text-align: center;
+  font-size: 60px;
+  font-weight: bold;
+  margin-top: 6.5rem; }
+  main .hour-minute {
+    width: 235px;
+    margin: 0 auto; }
+  main .date-value {
+    width: 280px;
+    margin: 0 auto; }
+
+.progress {
+  height: 30px; }
+  .progress .colored {
+    background-color: #4b77f2; }
+
+.minute,
+.day {
+  font-size: 50px;
+  font-weight: lighter; }

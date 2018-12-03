@@ -1,0 +1,20 @@
+<main>
+  <article class="hour-minute">
+    <span class="hour">{{time | date: 'a hh'}} : </span>
+    <span class="minute">{{time | date: 'mm'}}</span>
+    <section class="progress">
+      <div class="progress-bar progress-bar-striped progress-bar-animated colored"></div>
+    </section>
+  </article>
+  <article class="seconds">
+    <span class="second">{{time | date: 'ss'}}</span>
+  </article>
+  <article class="date-value">
+    <section class="progress">
+      <div class="progress-bar progress-bar-striped progress-bar-animated colored"></div>
+    </section>
+    <span class="month">{{time | date: 'MMM '}}</span>
+    <span class="day">{{time | date: 'dd, '}}</span>
+    <span class="year">{{time | date: 'yyyy'}}</span>
+  </article>
+</main>

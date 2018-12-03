@@ -1,0 +1,15 @@
+<main>
+  <article class="changeTime">
+    <span class="horChange">{{hor | number: '2.0-0'}}</span>
+    <span class="splitter"> - </span>
+    <span class="minChange">{{min | number: '2.0-0'}}</span>
+    <span class="splitter"> - </span>
+    <span class="secChange">{{sec | number: '2.0-0'}}</span>
+    <span class="splitter"> - </span>
+    <span class="miliSecChange">{{mili | number: '2.0-0'}}</span>
+  </article>
+  <article class="buttons">
+    <button class="button resetStop" (click)="reset()">Reset</button>
+    <button #starting class="button changingStop" (click)="start($event)">Start</button>
+  </article>
+</main>

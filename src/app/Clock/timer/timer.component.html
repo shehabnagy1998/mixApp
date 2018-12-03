@@ -1,0 +1,18 @@
+<main>
+  <article class="lables">
+    <label>H</label>
+    <label>M</label>
+    <label>S</label>
+  </article>
+  <article class="setTimer">
+    <input type="number" class="timerSetter hourSetter" [ngModel]="hor | number: '2.0-0'" (ngModelChange)="hor=$event"/>
+    <span class="splitter"> - </span>
+    <input type="number" class="timerSetter minuteSetter" [ngModel]="min | number: '2.0-0'" (ngModelChange)="min=$event"/>
+    <span class="splitter"> - </span>
+    <input type="number" class="timerSetter secondSetter" [ngModel]="sec | number: '2.0-0'" (ngModelChange)="sec=$event"/>
+  </article>
+  <article class="buttons">
+    <button class="button reset" (click)="resetTimer()">Reset</button>
+    <button #timer class="button changing" (click)="startTimer()">Start</button>
+  </article>
+</main>

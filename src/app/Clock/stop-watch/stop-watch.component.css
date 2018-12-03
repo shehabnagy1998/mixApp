@@ -1,0 +1,55 @@
+﻿main {
+  text-align: center;
+  margin-top: 9rem; }
+  @media (min-width: 991px) {
+    main {
+      margin-top: 6.5rem; } }
+
+.changeTime .horChange {
+  font-size: 70px;
+  font-weight: bolder; }
+
+.changeTime .minChange {
+  font-size: 60px;
+  font-weight: bold; }
+
+.changeTime .secChange {
+  font-size: 50px;
+  font-weight: normal; }
+
+.changeTime .miliSecChange {
+  font-size: 40px;
+  font-weight: lighter; }
+
+.changeTime .splitter {
+  font-size: 40px;
+  font-weight: bold; }
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  font-size: 30px;
+  margin: 30px auto;
+  width: 240px; }
+  .buttons > .button {
+    color: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 5px 15px;
+    cursor: pointer; }
+  .buttons .changingStop {
+    background: #4b77f2; }
+    .buttons .changingStop:hover {
+      background: #2955d0; }
+  .buttons .resetStop {
+    background: #dc3545; }
+    .buttons .resetStop:hover {
+      background: #ba1323; }
+
+@keyframes animate {
+  0% {
+    background-color: #007bff; }
+  50% {
+    background-color: #0052aa; }
+  100% {
+    background-color: #007bff; } }

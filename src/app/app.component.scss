@@ -1,0 +1,62 @@
+$mainColor: #007bff;
+$width: 100%;
+
+@mixin font-size($max, $min) {
+  font-size: $min;
+
+  @media(min-width: 991px) {
+    font-size: $max;
+  }
+}
+
+.navbar {
+  background: $mainColor;
+
+  .navbar-brand {
+    color: #fff;
+    @include font-size(2.5rem, 2rem)
+  }
+
+  .navbar-toggler {
+    color: #fff;
+  }
+
+  .navbar-collapse {
+    justify-content: flex-end;
+  }
+
+  .nav-link {
+    color: #fff - #222;
+    @include font-size(1.4rem, 1.2rem);
+
+    &:hover, &.active {
+      color: #fff;
+      font-weight: bold;
+    }
+  }
+
+  .dropdown-menu {
+    text-align: center;
+
+    .dropdown-item.active, .dropdown-item:active {
+      width: 80%;
+      margin: 0 auto;
+      border-radius: 15px;
+    }
+  }
+}
+
+.foot {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: $width;
+  transform: translate(-50%);
+  @include font-size(1rem, .8rem);
+  background: #007bff;
+  color: #fff;
+  padding: 7px;
+  text-align: center;
+}
+
+.content {position:relative;}

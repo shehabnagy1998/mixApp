@@ -1,0 +1,44 @@
+@mixin font-size($max, $min) {
+  font-size: $min;
+  @media(min-width: 991.98px) { font-size: $max;}
+}
+
+@mixin width($max, $min) {
+  width: $min;
+
+  @media(min-width: 991.98px) {
+    width: $max;
+  }
+}
+
+
+main {
+  text-align: center;
+  font-size: 60px;
+  font-weight: bold;
+  margin-top: 6.5rem;
+
+  .hour-minute {
+    width: 235px;
+    margin: 0 auto;
+  }
+
+  .date-value {
+    width: 280px;
+    margin: 0 auto;
+  }
+}
+
+.progress {
+  height: 30px;
+
+  .colored {
+    background-color: #4b77f2;
+  }
+}
+
+.minute,
+.day {
+  font-size: 50px;
+  font-weight: lighter;
+}
