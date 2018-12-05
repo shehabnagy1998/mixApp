@@ -14,9 +14,18 @@
   }
 }
 
+@mixin margin-bottom($max, $min) {
+  margin-bottom: $min;
+
+  @media(min-width: 992px) {
+    margin-bottom: $max;
+  }
+}
+
 main {
   text-align: center;
   @include margin-top(6.5rem, 9rem);
+  @include margin-bottom(15rem, 20rem);
 }
 
 .changeTime {

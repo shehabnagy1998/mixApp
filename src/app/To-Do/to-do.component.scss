@@ -1,0 +1,101 @@
+@mixin font-size($max, $min) {
+  font-size: $min;
+
+  @media(min-width: 992px) {
+    font-size: $max;
+  }
+}
+
+@mixin width($max, $min) {
+  width: $min;
+
+  @media(min-width: 991.98px) {
+    width: $max;
+  }
+}
+
+@mixin height($max, $min) {
+  height: $min;
+
+  @media(min-width: 991.98px) {
+    height: $max;
+  }
+}
+
+@mixin margin-top($max, $min) {
+  margin-top: $min;
+
+  @media(min-width: 991.98px) {
+    margin-top: $max;
+  }
+}
+
+@mixin margin-bottom($max, $min) {
+  margin-bottom: $min;
+
+  @media(min-width: 992px) {
+    margin-bottom: $max;
+  }
+}
+
+main {
+  @include margin-top(3rem, 3rem);
+  @include margin-bottom(1rem, 1.5rem);
+}
+
+.list {
+  width: 100%;
+  @include height(22rem, 30rem);
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 15px;
+  overflow: auto
+}
+
+.listItem {
+  margin-bottom: 10px;
+
+  .itemTitle {
+    display: flex;
+    justify-content: space-between;
+    background: #007bff;
+    padding: 5px 7px;
+    border-radius: 10px;
+
+    h1 {
+      font-size: 2rem;
+      color: #fff;
+    }
+
+    button {
+      background: transparent;
+      border: 0;
+      color: #fff;
+      font-size: 2rem;
+    }
+  }
+}
+
+.listName {
+  @include width(50%, 75%);
+  margin: 0 auto;
+
+  & > div {
+    display: flex;
+    justify-content: space-around
+  }
+
+  .form-list {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 20px;
+
+    &:active {
+      outline: 1px solid #007bff;
+    }
+  }
+}

@@ -14,5 +14,9 @@
   {
     "outputFile": "src/app/Clock/timer/timer.component.css",
     "inputFile": "src/app/Clock/timer/timer.component.scss"
+  },
+  {
+    "outputFile": "src/app/To-Do/to-do.component.css",
+    "inputFile": "src/app/To-Do/to-do.component.scss"
   }
 ]

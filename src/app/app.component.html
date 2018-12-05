@@ -1,33 +1,38 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<article class="navbar navbar-expand-lg">
-  <a href="#" class="navbar-brand">MyApp</a>
-  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar"><i class="fas fa-bars"></i></button>
-  <article class="collapse navbar-collapse" id="navbar">
-    <ul class="navbar-nav text-center">
-      <li class="nav-item"><a href="#" class="nav-link" routerLink="to-do" routerLinkActive="active" >To-Do List</a></li>
-      <li class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" routerLink="clock" routerLinkActive="active" >Clock</a>
-        <div class="dropdown-menu">
-          <a routerLink="clock/timenow" routerLinkActive="active" class="dropdown-item">Time Now</a>
-          <a routerLink="clock/timer" routerLinkActive="active" class="dropdown-item">Timer</a>
-          <a routerLink="clock/stopwatch" routerLinkActive="active" class="dropdown-item">Stop Watch</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" routerLink="mediaplayer" routerLinkActive="active" >Media Players</a>
-        <div class="dropdown-menu">
-          <a href="#" class="dropdown-item">Video</a>
-          <a href="#" class="dropdown-item">MP3</a>
-        </div>
-      </li>
-    </ul>
+<article class="content-inside">
+  <!--The content below is only a placeholder and can be replaced.-->
+  <article class="navbar navbar-expand-lg">
+    <section class="container">
+      <a href="#" class="navbar-brand">MyApp</a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar"><i class="fas fa-bars"></i></button>
+      <article class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav text-center">
+          <li class="nav-item"><a href="#" class="nav-link" routerLink="to-do" routerLinkActive="active">To-Do List</a></li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Clock</a>
+            <div class="dropdown-menu">
+              <a routerLink="clock/timenow" routerLinkActive="active" class="dropdown-item">Time Now</a>
+              <a routerLink="clock/timer" routerLinkActive="active" class="dropdown-item">Timer</a>
+              <a routerLink="clock/stopwatch" routerLinkActive="active" class="dropdown-item">Stop Watch</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" routerLink="mediaplayer" routerLinkActive="active">Media Players</a>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item">Video</a>
+              <a href="#" class="dropdown-item">MP3</a>
+            </div>
+          </li>
+        </ul>
+      </article>
+    </section>
   </article>
-</article>
 
-<article class="foot">
-  Copyrights &copy; reserved to Shehab Nagy
-</article>
+  <article [@routeAnimation]="o.isActivated ? o.activatedRoute : ''" class="content">
+    <router-outlet #o="outlet"></router-outlet>
+  </article>
 
-<article class="container content">
-  <router-outlet></router-outlet>
+  <article class="foot" #footer (click)="footerExpand(footer)">
+    All copyrights &copy; reserved to Shehab Nagy
+  </article>
+
 </article>

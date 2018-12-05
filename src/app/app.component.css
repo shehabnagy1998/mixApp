@@ -1,9 +1,15 @@
-﻿.navbar {
+﻿.content-inside {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
+.navbar {
   background: #007bff; }
   .navbar .navbar-brand {
     color: #fff;
     font-size: 2rem; }
-    @media (min-width: 991px) {
+    @media (min-width: 768px) {
       .navbar .navbar-brand {
         font-size: 2.5rem; } }
   .navbar .navbar-toggler {
@@ -13,7 +19,7 @@
   .navbar .nav-link {
     color: #dddddd;
     font-size: 1.2rem; }
-    @media (min-width: 991px) {
+    @media (min-width: 768px) {
       .navbar .nav-link {
         font-size: 1.4rem; } }
     .navbar .nav-link:hover, .navbar .nav-link.active {
@@ -27,19 +33,45 @@
       border-radius: 15px; }
 
 .foot {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 100%;
-  transform: translate(-50%);
+  transition: 1s linear;
+  position: relative;
   font-size: 0.8rem;
   background: #007bff;
   color: #fff;
   padding: 7px;
-  text-align: center; }
-  @media (min-width: 991px) {
+  cursor: pointer;
+  transform: translateX(-95%); }
+  @media (min-width: 768px) {
     .foot {
       font-size: 1rem; } }
+  .foot::after {
+    content: "";
+    right: -19px;
+    top: -4px;
+    position: absolute;
+    border-color: transparent #007bff;
+    border-style: solid;
+    border-width: 20px 0px 20px 20px; }
+    @media (min-width: 991px) {
+      .foot::after {
+        top: -6px;
+        border-width: 25px 0px 25px 25px;
+        right: -24px; } }
+  .foot::before {
+    content: "";
+    left: -19px;
+    top: -4px;
+    position: absolute;
+    border-color: transparent #007bff;
+    border-style: solid;
+    border-width: 20px 20px 20px 0px; }
+    @media (min-width: 991px) {
+      .foot::before {
+        top: -6px;
+        border-width: 25px 25px 25px 0px;
+        left: -24px; } }
 
 .content {
-  position: relative; }
+  position: relative;
+  width: 80%;
+  margin: 0 auto; }
