@@ -38,8 +38,17 @@
   }
 }
 
+.bordLeft {border-radius: 15px 0 0 0;}
+.bordRight {border-radius: 0 15px 0 0;}
+.bordBRight { border-radius: 0 0 15px 0; }
+.bordBLeft { border-radius: 0 0 0 15px; }
+.deletedText {
+  text-decoration: line-through;
+  color: #616161
+}
+
 main {
-  @include margin-top(3rem, 3rem);
+  @include margin-top(2.8rem, 3rem);
   @include margin-bottom(1rem, 1.5rem);
 }
 
@@ -47,10 +56,11 @@ main {
   width: 100%;
   @include height(22rem, 30rem);
   border: 1px solid #ddd;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   border-radius: 10px;
   padding: 15px;
-  overflow: auto
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .listItem {
@@ -60,19 +70,59 @@ main {
     display: flex;
     justify-content: space-between;
     background: #007bff;
-    padding: 5px 7px;
-    border-radius: 10px;
+    padding: 5px 15px;
+    align-items: baseline;
 
     h1 {
-      font-size: 2rem;
+      @include font-size(2rem, 1.5rem);
       color: #fff;
     }
 
     button {
       background: transparent;
       border: 0;
+      @include font-size(2rem, 1.7rem);
+      outline: none;
+      cursor: pointer;
+    }
+
+    .slider {
       color: #fff;
-      font-size: 2rem;
+      transition: color .5s;
+
+      &:hover, &:active {
+        color: #fff - #333;
+      }
+    }
+
+    .deleter {
+      color: #b51b1b;
+      transition: color .5s;
+
+      &:hover, &:active {
+        color: #b51b1b + #222;
+      }
+    }
+  }
+
+  .itemDetails {
+    background: #9ccceb;
+    color: #3e3e3e;
+    padding: 10px 20px;
+    display: none;
+
+    .form-check {
+      display: flex;
+      align-items: center;
+    }
+
+    .form-check-input {
+      transform: scale(1.5);
+    }
+
+    .form-check-label {
+      font-size: 1.3rem;
+      margin-left: 5px;
     }
   }
 }
@@ -81,7 +131,11 @@ main {
   @include width(50%, 75%);
   margin: 0 auto;
 
-  & > div {
+  & div:last-child {
+    text-align: center;
+  }
+
+  & div:last-child {
     display: flex;
     justify-content: space-around
   }
@@ -93,9 +147,12 @@ main {
     border-radius: 10px;
     border: 1px solid #ddd;
     font-size: 20px;
+    resize: none;
 
     &:active {
       outline: 1px solid #007bff;
     }
   }
 }
+
+.listName:last-child {display: none}

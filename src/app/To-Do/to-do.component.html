@@ -1,27 +1,47 @@
-<main>
-  <article class="list">
-    <section class="listItem" *ngFor="let list of lists, index as i">
-      <div class="itemTitle">
+<main class="main">
+  <article class="list" [@listAnimation]="lists.length">
+    <section class="listItem" *ngFor="let list of lists, index as i, even as e, odd as o">
+      <div class="itemTitle" [ngClass]="{bordLeft: e, bordRight: o}">
         <h1>{{i+1}} - {{list.name}}</h1>
-        <button><i class="fas fa-arrow-circle-down"></i></button>
+        <div>
+          <button class="slider"><i class="fas fa-arrow-circle-down"></i></button>
+          <button class="deleter" (click)="delete(list)"><i class="fas fa-times-circle"></i></button>
+        </div>
       </div>
-      <div class="itemDetails" *ngFor="let item of list.do, index as i">
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" [(ngModel)]="list.check[i]" />
-          <label class="form-check-label" >{{item}}</label>
+      <div class="itemDetails" [ngClass]="{bordBRight: e, bordBLeft: o}">
+        <div class="form-check" *ngFor="let item of list.check, index as i">
+          <input type="checkbox" class="form-check-input" [(ngModel)]="item" />
+          <label class="form-check-label" [ngClass]="{deletedText: item}">{{list.do[i]}}</label>
         </div>
       </div>
     </section>
   </article>
 
-  <article class="listName">
-    <input list="todos" class="form-list" [ngModel]="selectedList" (ngModelChange)="changing($event)"/>
-    <datalist id="todos">
-      <option *ngFor="let list of lists">{{list.name}}</option>
-    </datalist>
-    <div>
-      <button class="btn btn-primary btn-lg" #btn>Create</button>
-      <button class="btn btn-danger btn-lg">Delete</button>
-    </div>
+  <article>
+    <section class="listName">
+      <div>
+        <label>enter list name to create or edit</label>
+        <input list="todos" class="form-list" [ngModel]="selectedList" (ngModelChange)="changing($event)" />
+        <datalist id="todos">
+          <option *ngFor="let list of lists">{{list.name}}</option>
+        </datalist>
+      </div>
+      <div>
+        <button class="btn btn-primary btn-lg btnChanger" (click)="create()" #btnCreate>Create</button>
+        <button class="btn btn-danger btn-lg" (click)="deleteAll()" #btnDelete>Delete All</button>
+      </div>
+    </section>
+
+    <section class="listName">
+      <div>
+        <label>enter tasks</label>
+        <textarea class="form-list" #text></textarea>
+      </div>
+      <div>
+        <button class="btn btn-primary btn-lg btnChanger" id="done" (click)="done()">Done</button>
+        <button class="btn btn-danger btn-lg btnChanger">&lArr;</button>
+      </div>
+    </section>
   </article>
 </main>
+

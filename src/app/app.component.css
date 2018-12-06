@@ -1,10 +1,4 @@
-﻿.content-inside {
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  height: 100%; }
-
-.navbar {
+﻿.navbar {
   background: #007bff; }
   .navbar .navbar-brand {
     color: #fff;
@@ -32,46 +26,50 @@
       margin: 0 auto;
       border-radius: 15px; }
 
-.foot {
+/*.foot {
   transition: 1s linear;
   position: relative;
-  font-size: 0.8rem;
+  @include font-size(1rem, .8rem);
   background: #007bff;
   color: #fff;
   padding: 7px;
   cursor: pointer;
-  transform: translateX(-95%); }
-  @media (min-width: 768px) {
-    .foot {
-      font-size: 1rem; } }
-  .foot::after {
+  transform: translateX(-95%);
+
+  &::after {
     content: "";
     right: -19px;
     top: -4px;
     position: absolute;
     border-color: transparent #007bff;
     border-style: solid;
-    border-width: 20px 0px 20px 20px; }
-    @media (min-width: 991px) {
-      .foot::after {
-        top: -6px;
-        border-width: 25px 0px 25px 25px;
-        right: -24px; } }
-  .foot::before {
+    border-width: 20px 0px 20px 20px;
+
+    @media(min-width: 991px) {
+      top: -6px;
+      border-width: 25px 0px 25px 25px;
+      right: -24px;
+    }
+  }
+
+  &::before {
     content: "";
     left: -19px;
     top: -4px;
     position: absolute;
     border-color: transparent #007bff;
     border-style: solid;
-    border-width: 20px 20px 20px 0px; }
-    @media (min-width: 991px) {
-      .foot::before {
-        top: -6px;
-        border-width: 25px 25px 25px 0px;
-        left: -24px; } }
+    border-width: 20px 20px 20px 0px;
 
+    @media(min-width: 991px) {
+      top: -6px;
+      border-width: 25px 25px 25px 0px;
+      left: -24px;
+    }
+  }
+}*/
 .content {
   position: relative;
   width: 80%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  height: auto; }

@@ -1,9 +1,25 @@
-﻿main {
+﻿.bordLeft {
+  border-radius: 15px 0 0 0; }
+
+.bordRight {
+  border-radius: 0 15px 0 0; }
+
+.bordBRight {
+  border-radius: 0 0 15px 0; }
+
+.bordBLeft {
+  border-radius: 0 0 0 15px; }
+
+.deletedText {
+  text-decoration: line-through;
+  color: #616161; }
+
+main {
   margin-top: 3rem;
   margin-bottom: 1.5rem; }
   @media (min-width: 991.98px) {
     main {
-      margin-top: 3rem; } }
+      margin-top: 2.8rem; } }
   @media (min-width: 992px) {
     main {
       margin-bottom: 1rem; } }
@@ -12,10 +28,11 @@
   width: 100%;
   height: 30rem;
   border: 1px solid #ddd;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   border-radius: 10px;
   padding: 15px;
-  overflow: auto; }
+  overflow-y: auto;
+  overflow-x: hidden; }
   @media (min-width: 991.98px) {
     .list {
       height: 22rem; } }
@@ -26,16 +43,46 @@
     display: flex;
     justify-content: space-between;
     background: #007bff;
-    padding: 5px 7px;
-    border-radius: 10px; }
+    padding: 5px 15px;
+    align-items: baseline; }
     .listItem .itemTitle h1 {
-      font-size: 2rem;
+      font-size: 1.5rem;
       color: #fff; }
+      @media (min-width: 992px) {
+        .listItem .itemTitle h1 {
+          font-size: 2rem; } }
     .listItem .itemTitle button {
       background: transparent;
       border: 0;
+      font-size: 1.7rem;
+      outline: none;
+      cursor: pointer; }
+      @media (min-width: 992px) {
+        .listItem .itemTitle button {
+          font-size: 2rem; } }
+    .listItem .itemTitle .slider {
       color: #fff;
-      font-size: 2rem; }
+      transition: color .5s; }
+      .listItem .itemTitle .slider:hover, .listItem .itemTitle .slider:active {
+        color: #cccccc; }
+    .listItem .itemTitle .deleter {
+      color: #b51b1b;
+      transition: color .5s; }
+      .listItem .itemTitle .deleter:hover, .listItem .itemTitle .deleter:active {
+        color: #d73d3d; }
+  .listItem .itemDetails {
+    background: #9ccceb;
+    color: #3e3e3e;
+    padding: 10px 20px;
+    display: none; }
+    .listItem .itemDetails .form-check {
+      display: flex;
+      align-items: center; }
+    .listItem .itemDetails .form-check-input {
+      transform: scale(1.5); }
+    .listItem .itemDetails .form-check-label {
+      font-size: 1.3rem;
+      margin-left: 5px; }
 
 .listName {
   width: 75%;
@@ -43,7 +90,9 @@
   @media (min-width: 991.98px) {
     .listName {
       width: 50%; } }
-  .listName > div {
+  .listName div:last-child {
+    text-align: center; }
+  .listName div:last-child {
     display: flex;
     justify-content: space-around; }
   .listName .form-list {
@@ -52,6 +101,10 @@
     padding: 5px 10px;
     border-radius: 10px;
     border: 1px solid #ddd;
-    font-size: 20px; }
+    font-size: 20px;
+    resize: none; }
     .listName .form-list:active {
       outline: 1px solid #007bff; }
+
+.listName:last-child {
+  display: none; }
